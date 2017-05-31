@@ -5,28 +5,11 @@ const browserSync = require('browser-sync').create();
 const del = require('del');
 const wiredep = require('wiredep').stream;
 const runSequence = require('run-sequence');
-// const Proxy = require('gulp-api-proxy');
-// const connect = require('gulp-connect');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
 let dev = true;
-
-// gulp.task('connect', function () {
-//   connect.server({
-//     root: 'dist/',
-//     port: 9001,
-//     livereload: true,
-//     middleware: function (connect, opt) {
-//       // `localhost/server/api/getuser/1` will be proxied to `192.168.1.186/server/api/getuser/1` 
-//       opt.route = 'm.api';
-//       opt.context = 'www.fengqu.com/m.api';
-//       var proxy = new Proxy(opt);
-//       return [proxy];
-//     }
-//   });
-// });
 
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.css')
