@@ -5,6 +5,7 @@ const browserSync = require('browser-sync').create();
 const del = require('del');
 const wiredep = require('wiredep').stream;
 const runSequence = require('run-sequence');
+const proxy = require('http-proxy-middleware');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -89,16 +90,23 @@ gulp.task('extras', () => {
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 gulp.task('serve', () => {
-  runSequence(['clean', 'wiredep'], ['styles', 'scripts', 'fonts'], ['connect'], () => {
+  var mapiproxy = proxy('/m.api', {
+    target: 'http://www.fengqu.com',
+    changeOrigin: true,             // for vhosted sites, changes host header to match to target's host
+    logLevel: 'debug'
+  });
+
+  runSequence(['clean', 'wiredep'], ['styles', 'scripts', 'fonts'], () => {
     browserSync.init({
       notify: false,
       port: 9000,
       server: {
         baseDir: ['.tmp', 'app'],
         routes: {
-          '/bower_components': 'bower_components'
+          '/bower_components': 'bower_components',
         }
-      }
+      },
+      middleware: [mapiproxy]
     });
 
     gulp.watch([
