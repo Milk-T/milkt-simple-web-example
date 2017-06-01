@@ -92,7 +92,7 @@ gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 gulp.task('serve', () => {
   var mapiproxy = proxy('/m.api', {
     target: 'http://www.fengqu.com',
-    changeOrigin: true,             // for vhosted sites, changes host header to match to target's host
+    changeOrigin: true,
     logLevel: 'debug'
   });
 
