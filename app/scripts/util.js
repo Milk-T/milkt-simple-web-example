@@ -1,4 +1,5 @@
 var append_word = 'sfhaitao.xyz!'
+// var append_word = 'net.pocrd'
 var request_url = '/m.api'
 
 var ERROR_CODE_TOKEN_ERROR = -360;

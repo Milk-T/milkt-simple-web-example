@@ -92,6 +92,7 @@ gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 gulp.task('serve', () => {
   var mapiproxy = proxy('/m.api', {
     target: 'http://www.fengqu.com',
+    // target: 'http://116.62.220.94/',
     changeOrigin: true,
     logLevel: 'debug'
   });
