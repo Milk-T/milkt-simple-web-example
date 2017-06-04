@@ -20,6 +20,16 @@
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 ```
 
+*下载安装window版本的nvm-windows*
+
+[window版本的nvm-windows](https://github.com/coreybutler/nvm-windows/releases)
+
+使用setup版本
+
+[nvm-setup](https://github.com/coreybutler/nvm-windows/releases/download/1.1.5/nvm-setup.zip)
+
+下载完成之后，把nvm目录设置到环境变量里。启动git bash查看nvm命令 - [git下载地址](https://git-scm.com/)
+
 安装完成之后输入`nvm`会有帮助信息
 
 ```shell
@@ -98,8 +108,18 @@ sudo npm install -g bower
 
 进入项目目录先后执行两个包安装的命令
 
+在使用npm之前，我们需要设置一下镜像，参考[这里](http://npm.taobao.org/)，使用命令
+
+
+```
+$ npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+```
+
+这样就可以用cnpm替换npm
+
 ```shell
-npm install
+cnpm install
 ```
 
 ```shell
