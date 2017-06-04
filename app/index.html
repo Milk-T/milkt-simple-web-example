@@ -30,7 +30,16 @@
     </div>
 
     <!-- example template -->
-    <script type="milkt/template" id="example-template">
+    <script type="milkt/template" id="milkt-sayhello-template">
+      <h1><%= name %></h1>
+      <pre>
+        id: <%= id %>
+      </pre>
+      <a href="/product.html?productId=<%=id %>">去product</a>
+    </script>
+
+    <!-- example template -->
+    <script type="milkt/template" id="milkt-example-template">
       <h1><%= skuInfo.title %></h1>
       <pre>
         <%= skuInfo.subtitle %>
@@ -46,11 +55,12 @@
     <script src="/bower_components/lodash/lodash.js"></script>
     <script src="/bower_components/blueimp-md5/js/md5.min.js"></script>
     <script src="/bower_components/store/dist/store.everything.min.js"></script>
+    <script src="/bower_components/zepto/zepto.min.js"></script>
     <!-- endbuild -->
     
     <!-- build:js scripts/main.js -->
     <script src="scripts/api/fq.getItemInfo.js"></script>
-    <!--<script src="scripts/api/demo.sayHello.js"></script>-->
+    <script src="scripts/api/demo.sayHello.js"></script>
     <script src="scripts/util.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->

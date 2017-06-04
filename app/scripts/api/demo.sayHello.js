@@ -1,8 +1,8 @@
 var demoSayHello = {
-  METHOD_NAME: "demo.sayHello",
-  SECURITY_TYPE: "None",
+  METHOD_NAME: 'demo.sayHello',
+  SECURITY_TYPE: 'None',
   REQUIRED: {
-    name: "string"
+    name: 'string'
   },
   OPTIONAL: {},
   VERIFY: {},

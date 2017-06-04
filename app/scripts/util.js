@@ -1,5 +1,5 @@
-var append_word = 'sfhaitao.xyz!'
-// var append_word = 'net.pocrd'
+// var append_word = 'sfhaitao.xyz!'
+var append_word = 'net.pocrd'
 var request_url = '/m.api'
 
 var ERROR_CODE_TOKEN_ERROR = -360;
@@ -48,13 +48,13 @@ MilkT.prototype = {
     var map = {
       'None': function (data, force) {
         return _.extend(data, {
-          _sig: this.encrypt(data, append_word || "renshengjiushiyikebocai")
+          _sig: this.encrypt(data, append_word || 'renshengjiushiyikebocai')
         });
       },
 
       'RegisteredDevice': function (data, force) {
         return _.extend(data, {
-          _sig: this.encrypt(data, append_word || "renshengjiushiyikebocai")
+          _sig: this.encrypt(data, append_word || 'renshengjiushiyikebocai')
         });
       },
 
@@ -121,11 +121,11 @@ MilkT.prototype = {
         store.set('csrfToken', response.csrfToken);
       },
 
-      "user.partnerLogin": function (response) {
+      'user.partnerLogin': function (response) {
         store.set('csrfToken', response.csrfToken);
       },
 
-      "user.mobileRegister": function (response) {
+      'user.mobileRegister': function (response) {
         store.set('csrfToken', response.csrfToken);
       }
     };
@@ -211,7 +211,7 @@ MilkT.prototype = {
     $.ajax({
       url: request_url,
       type: 'post',
-      contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
       data: that.sign(data),
       success: function (response) {
         successCallback(response);
@@ -252,7 +252,7 @@ MilkT.prototype = {
     }
 
     //根据action校验是否登录
-    if (this.api.SECURITY_TYPE === "UserLogin") {
+    if (this.api.SECURITY_TYPE === 'UserLogin') {
       if (!this.checkUserLogin()) {
         if (isForceUserLogin) {
           // @todo 引导用户登录

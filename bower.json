@@ -6,7 +6,8 @@
     "modernizr": "~2.8.1",
     "blueimp-md5": "^2.7.0",
     "lodash": "^4.17.4",
-    "store": "https://github.com/marcuswestin/store.js.git"
+    "store": "https://github.com/marcuswestin/store.js.git",
+    "zepto": "^1.2.0"
   },
   "overrides": {
     "bootstrap": {
