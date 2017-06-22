@@ -8,6 +8,8 @@ $(function(){
         // 有了csrfToken之后将csrfToken存到store中
         store.set('csrfToken', data.csrfToken)
 
+        // 做其他事情...
+
         // 跳转到其他页面，或者刷新当前页面
         window.location.reload(true);
       })
