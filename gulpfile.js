@@ -25,7 +25,7 @@ gulp.task('scripts', () => {
   return gulp.src('app/scripts/**/*.js')
     .pipe($.plumber())
     .pipe($.if(dev, $.sourcemaps.init()))
-    .pipe($.babel())
+    // .pipe($.babel())
     .pipe($.if(dev, $.sourcemaps.write('.')))
     .pipe(gulp.dest('.tmp/scripts'))
     .pipe(reload({ stream: true }));
@@ -35,7 +35,7 @@ function lint(files) {
   return gulp.src(files)
     .pipe($.eslint({ fix: true }))
     .pipe(reload({ stream: true, once: true }))
-    .pipe($.eslint.format())
+    .pipe($.eslint.format(''))
     .pipe($.if(!browserSync.active, $.eslint.failAfterError()));
 }
 
@@ -92,7 +92,7 @@ gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 gulp.task('serve', () => {
   var mapiproxy = proxy('/m.api', {
     // target: 'http://www.fengqu.com',
-    target: 'http://116.62.220.94/',
+    target: 'http://116.62.247.9:8080/apigw/',
     changeOrigin: true,
     logLevel: 'debug'
   });
